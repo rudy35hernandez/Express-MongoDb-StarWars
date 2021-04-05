@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="main.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Quotes</title>
+</head>
+<body>
+
+
+    <section class="topThree">
+
+    <div class="square">    
+
+    <h1>May Node and Express be with you</h1>
+    <form action="/quotes" method="POST">
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="quote" name="quote">
+    <button type="submit">Submit</button>
+    </form>
+
+    </div>
+
+    <div class="square">
+        <h2>Darth Vader invades!!!</h2>
+        <p>
+            Replace Yoda's first quote with a quote written by Darth Vader
+        </p>
+        <button id="update-button">Replace Yoda's quote</button>
+    </div>
+
+    <div class="square">
+        <h2>Remove Darth Vader!</h2>
+        <p>Delete one Darth Vader quote. Does nothing if there are no Darth Vader quotes left.</p>
+        <button id="delete-button">Delete Darth Vader's quote</button>
+    </div>
+    
+</section>
+
+<div id="message">
+
+</div>
+
+
+    <h2>Quotes</h2>
+
+    <ul class="quotes">
+        <!--This below will loops through all the quotes-->
+    <% for(var i = 0; i < quotes.length; i++) {%>
+        <li class="quote">
+            <!--line below is the code for the NAME of the object-->
+            <span><%= quotes[i].name %></span>:
+            <!--line below is the code for the QUOTE of the object-->
+            <span><%= quotes[i].quote %></span>
+        </li>
+    <% } %> 
+    </ul>
+
+    <script src="main.js"></script>
+</body>
+</html>
